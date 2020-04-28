@@ -10,9 +10,13 @@ function App() {
     setCreds({ ...creds, [e.target.name]: e.target.value})
   }
 
+  const loginSubmit = e => {
+    
+  }
+
   return (
     <div>
-      <form>
+      <form onSubmit={loginSubmit}>
         <input
           name='username'
           placeholder='username'
@@ -26,6 +30,7 @@ function App() {
           value={creds.password}
           onChange={handleChange}
         />
+        <button type='submit'>Login</button>
       </form>
     </div>
   );
