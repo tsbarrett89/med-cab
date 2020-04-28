@@ -10,13 +10,13 @@ function App() {
     setCreds({ ...creds, [e.target.name]: e.target.value})
   }
 
-  const loginSubmit = e => {
-    
+  const registerSubmit = e => {
+
   }
 
   return (
     <div>
-      <form onSubmit={loginSubmit}>
+      <form onSubmit={registerSubmit}>
         <input
           name='username'
           placeholder='username'
@@ -27,6 +27,22 @@ function App() {
           name='password'
           type='password'
           placeholder='password'
+          value={creds.password}
+          onChange={handleChange}
+        />
+        <button type='submit'>Register</button>
+      </form>
+      <form>
+        <input
+          name='username'
+          placeholder='username'
+          value={creds.username}
+          onChange={handleChange}
+        />
+        <input
+          name='password'
+          placeholder='password'
+          type='password'
           value={creds.password}
           onChange={handleChange}
         />
