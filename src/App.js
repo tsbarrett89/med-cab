@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function App() {
   const [creds, setCreds] = useState({
@@ -11,7 +12,17 @@ function App() {
   }
 
   const registerSubmit = e => {
+    e.preventDefault()
+    axios.post(``, creds)
+    .then(res => console.log(res.data))
+    .catch(err => console.log(err.response))
+  }
 
+  const loginSubmit = e => {
+    e.preventDefault()
+    axios.post(``, creds)
+    .then(res => console.log(res.data))
+    .catch(err => console.log(err.response))
   }
 
   return (
@@ -32,7 +43,7 @@ function App() {
         />
         <button type='submit'>Register</button>
       </form>
-      <form>
+      <form onSubmit={loginSubmit}>
         <input
           name='username'
           placeholder='username'
