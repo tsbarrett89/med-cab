@@ -13,14 +13,14 @@ function App() {
 
   const registerSubmit = e => {
     e.preventDefault()
-    axios.post(``, creds)
+    axios.post(`https://ousmedcab.herokuapp.com/api/auth/register`, creds)
     .then(res => console.log(res.data))
     .catch(err => console.log(err.response))
   }
 
   const loginSubmit = e => {
     e.preventDefault()
-    axios.post(``, creds)
+    axios.post(`https://ousmedcab.herokuapp.com/api/auth/login`, creds)
     .then(res => console.log(res.data))
     .catch(err => console.log(err.response))
   }
