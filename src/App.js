@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
 function App() {
+  const [creds, setCreds] = useState({
+    username: '',
+    password: ''
+  })
+
+  const handleChange = e => {
+    setCreds({ ...creds, [e.target.name]: e.target.value})
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <form>
+        <input
+          name='username'
+          placeholder='username'
+          value={creds.username}
+          onChange={handleChange}
+        />
+        <input
+          name='password'
+          type='password'
+          placeholder='password'
+          value={creds.password}
+          onChange={handleChange}
+        />
+      </form>
     </div>
   );
 }
